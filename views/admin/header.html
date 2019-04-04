@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Starter</title>
+    <title>SimploSis | Gerenciador Web</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -64,14 +64,14 @@ desired effect
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg"><b>SIMPLO</b>SIS</span>
             </a>
 
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">Alternar Navegação</span>
                 </a>
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
@@ -200,13 +200,13 @@ desired effect
                                 <li class="user-body">
                                     <div class="row">
                                         <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
+                                            <a href="#">Seguidores</a>
                                         </div>
                                         <div class="col-xs-4 text-center">
-                                            <a href="#">Sales</a>
+                                            <a href="#">Vendas</a>
                                         </div>
                                         <div class="col-xs-4 text-center">
-                                            <a href="#">Friends</a>
+                                            <a href="#">Amigos</a>
                                         </div>
                                     </div>
                                     <!-- /.row -->
@@ -214,10 +214,10 @@ desired effect
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        <a href="#" class="btn btn-default btn-flat">Perfil</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="/admin/logout" class="btn btn-default btn-flat">Sair</a>
                                     </div>
                                 </li>
                             </ul>
@@ -251,7 +251,7 @@ desired effect
                 <!-- search form (Optional) -->
                 <form action="#" method="get" class="sidebar-form">
                     <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <input type="text" name="q" class="form-control" placeholder="Buscar...">
                         <span class="input-group-btn">
                             <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
                                     class="fa fa-search"></i>
@@ -263,7 +263,7 @@ desired effect
 
                 <!-- Sidebar Menu -->
                 <ul class="sidebar-menu">
-                    <li class="header">HEADER</li>
+                    <li class="header">MENU</li>
                     <!-- Optionally, you can add icons to the links -->
                     <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
                     <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
