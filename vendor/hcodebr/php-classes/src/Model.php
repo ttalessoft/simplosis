@@ -1,56 +1,50 @@
-<?php 
+<?php
 
-namespace Hcode;
+    namespace Hcode;
 
-class Model {
+    class Model{
 
-	private $values = [];
+        private $values = [];
 
-	public function setData($data)
-	{
+        // Cria dinamicamente os metodos get's and set's a partir do objeto referenciado
+        public function __call($name, $args){
 
-		foreach ($data as $key => $value)
-		{
+            // identifica pelo nome do atributo se ele é set ou get
+            $method = substr($name, 0, 3);
 
-			$this->{"set".$key}($value);
+            // identifica pelo nome do atributo o nome do campo no banco/classe
+            $fieldName = substr($name, 3, strlen($name));
 
-		}
+            switch ($method) {
+                
+                // condiciona se for um metodo get retorna o valor do campo
+                case 'get': 
+                    return (isset($this->values[$fieldName])) ? $this->values[$fieldName] : NULL; 
+                        break;
+                // condiciona se for um método set ele edita/insere o valor a variável        
+                case 'set': 
+                    $this->values[$fieldName] = $args[0]; 
+                        break;
+            
+            }
 
-	}
+        }
 
-	public function __call($name, $args)
-	{
+        // Seta dados a partir de uma busca no objeto
+        public function setData($data = array()){
 
-		$method = substr($name, 0, 3);
-		$fieldName = substr($name, 3, strlen($name));
+            foreach ($data as $key => $value) {
 
-		if (in_array($fieldName, $this->fields))
-		{
-			
-			switch ($method)
-			{
+                $this->{"set".$key}($value);
 
-				case "get":
-					return $this->values[$fieldName];
-				break;
+            }
+        }
 
-				case "set":
-					$this->values[$fieldName] = $args[0];
-				break;
+        // Pega os dados do usuário que conseguiu fazer o login
+        public function getValues(){
 
-			}
+            return $this->values;
+        }
 
-		}
 
-	}
-
-	public function getValues()
-	{
-
-		return $this->values;
-
-	}
-
-}
-
- ?>
+    }
