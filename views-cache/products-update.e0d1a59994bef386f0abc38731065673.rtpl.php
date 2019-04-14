@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -18,23 +18,23 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form" action="/admin/products/{$product.idproduct}" method="post" enctype="multipart/form-data">
+          <form role="form" action="/admin/products/<?php echo htmlspecialchars( $product["idproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" method="post" enctype="multipart/form-data">
             <div class="box-body">
               <div class="form-group">
                 <label for="desproduct">Nome da produto</label>
                 <input type="text" class="form-control" id="desproduct" name="desproduct"
-                  placeholder="Digite o nome do produto" value="{$product.desproduct}">
+                  placeholder="Digite o nome do produto" value="<?php echo htmlspecialchars( $product["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <label for="vlprice">Preço</label>
                   <input type="number" class="form-control" id="vlprice" name="vlprice" step="0.01" placeholder="0.00"
-                    value="{$product.vlprice}">
+                    value="<?php echo htmlspecialchars( $product["vlprice"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
                 <div class="col-md-6">
                   <label for="vlweight">Peso</label>
                   <input type="number" class="form-control" id="vlweight" name="vlweight" step="0.01" placeholder="0.00"
-                    value="{$product.vlweight}">
+                    value="<?php echo htmlspecialchars( $product["vlweight"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
               </div>
 
@@ -42,27 +42,27 @@
                 <div class="col-md-4">
                   <label for="vlwidth">Largura</label>
                   <input type="number" class="form-control" id="vlwidth" name="vlwidth" step="0.01" placeholder="0.00"
-                    value="{$product.vlwidth}">
+                    value="<?php echo htmlspecialchars( $product["vlwidth"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
                 <div class="col-md-4">
                   <label for="vlheight">Altura</label>
                   <input type="number" class="form-control" id="vlheight" name="vlheight" step="0.01" placeholder="0.00"
-                    value="{$product.vlheight}">
+                    value="<?php echo htmlspecialchars( $product["vlheight"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
                 <div class="col-md-4">
                   <label for="vllength">Comprimento</label>
                   <input type="number" class="form-control" id="vllength" name="vllength" step="0.01" placeholder="0.00"
-                    value="{$product.vllength}">
+                    value="<?php echo htmlspecialchars( $product["vllength"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="file">Foto</label>
-                <input type="file" class="form-control" id="file" name="file" value="{$product.vlweight}"
+                <input type="file" class="form-control" id="file" name="file" value="<?php echo htmlspecialchars( $product["vlweight"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
                   style="margin: 0px; padding: 0px;">
                 <div class="box box-widget">
                   <div class="box-body">
-                    <img class="img-responsive" id="image-preview" src="{$product.desphoto}" alt="Photo"
+                    <img class="img-responsive" id="image-preview" src="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Photo"
                       style="width: 300px;">
                   </div>
                 </div>
