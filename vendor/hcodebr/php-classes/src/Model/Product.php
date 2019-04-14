@@ -13,6 +13,16 @@ class Product extends Model{
         return $sql->select("SELECT * FROM tb_products ORDER BY desproduct;");
     }
 
+    public function checkList($list){
+
+        foreach($list as &$row){
+            $p = new Product();
+            $p->setData($row);
+            $row = $p->getValues();
+        }
+        return $list;
+    }
+
     // Método salvar
     public function save(){
         $sql = new Sql();
@@ -103,4 +113,5 @@ class Product extends Model{
 
         $this->checkPhoto();
     }
+    
 }

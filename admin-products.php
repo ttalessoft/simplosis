@@ -76,6 +76,6 @@ $app->get("/admin/products/:idproduct/delete", function($idproduct){
     $product->get((int)$idproduct);
     $product->delete();
 
-    header("Location: /admin/products");
+    header("Location: /admin/products" );
     exit;
 });
