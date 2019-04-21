@@ -17,6 +17,7 @@ $app->get('/', function() {
 
 });
 
+// Paginação de produtos
 $app->get("/categories/:idcategory", function($idcategory){
 
 	$page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1; 
@@ -40,4 +41,16 @@ $app->get("/categories/:idcategory", function($idcategory){
 		'products'=>$pagination["data"],
 		'pages'=>$pages
 	]);
+});
+
+$app->get("/products/:desurl", function($desurl){
+
+	$product = new Product();
+	$product->getFromURL($desurl);
+	$page = new Page();
+	$page->setTpl("product-detail", [
+		'product'=>$product->getValues(),
+		'categories'=>$product->getCategories()
+	]);
+
 });
