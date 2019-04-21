@@ -4,6 +4,7 @@ use Hcode\Page;
 
 use Hcode\Model\Product;
 use Hcode\Model\Category;
+use Hcode\Model\Cart;
 
 // Renderiza página loja
 $app->get('/', function() {
@@ -43,6 +44,7 @@ $app->get("/categories/:idcategory", function($idcategory){
 	]);
 });
 
+// Renderiza página do produto
 $app->get("/products/:desurl", function($desurl){
 
 	$product = new Product();
@@ -53,4 +55,10 @@ $app->get("/products/:desurl", function($desurl){
 		'categories'=>$product->getCategories()
 	]);
 
+});
+
+$app->get("/cart", function(){
+	$cart = Cart::getFromSession();
+	$page = new Page();
+	$page->setTpl("cart");
 });
