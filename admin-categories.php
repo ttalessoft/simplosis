@@ -31,6 +31,8 @@ use Hcode\PageAdmin;
 	 // Salva uma categoria no banco
 	 $app->post("/admin/categories/create", function(){
 
+		User::verifyLogin();
+
 		$category = new Category();
 		$category->setData($_POST);
 		$category->save();

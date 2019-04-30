@@ -1,5 +1,7 @@
 <?php
 
+use Hcode\Model\User;
+
 use Hcode\PageAdmin;
 
     // Método que carrega a página de cadastro de clientes

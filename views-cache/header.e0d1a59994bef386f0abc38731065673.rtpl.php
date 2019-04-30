@@ -3,7 +3,7 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -21,6 +21,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="/res/admin/plugins/daterangepicker/daterangepicker.css">
     <!-- bootstrap datepicker -->
     <link rel="stylesheet" href="/res/admin/plugins/datepicker/datepicker3.css">
+    <!-- DataTables -->
+    <link res="stylesheet" href="/res/admin/plugins/datatables/dataTables.bootstrap.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- iCheck for checkboxes and radio inputs -->
     <link rel="stylesheet" href="/res/admin/plugins/iCheck/all.css">
     <!-- Bootstrap Color Picker -->
@@ -322,8 +328,19 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/admin/categories">Categorias</a></li>
+                            <li><a href="/admin/categories">Listar</a></li>
                             <li><a href="/admin/categories/create">Cadastrar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-map-marker"></i> <span>Cidades</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/admin/cities">Listar</a></li>
+                            <li><a href="/admin/cities/create">Cadastrar</a></li>
                         </ul>
                     </li>
                 </ul>

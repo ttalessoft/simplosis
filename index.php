@@ -21,6 +21,7 @@ require_once("admin-clients.php");
 require_once("admin-login.php");
 require_once("admin-users.php");
 require_once("admin-products.php");
+require_once("admin-cities.php");
 
 $app->run();
 
