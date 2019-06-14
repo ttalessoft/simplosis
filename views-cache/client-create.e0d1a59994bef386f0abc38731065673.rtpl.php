@@ -6,9 +6,9 @@
       Lista de Clientes
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#">Clientes</a></li>
-      <li class="active"><a href="#">Cadastrar</a></li>
+      <li class="active"><a href="/admin/clients/create">Cadastrar</a></li>
     </ol>
   </section>
 
@@ -29,64 +29,72 @@
             <div class="box-body">
               <div class="form-group col-md-12">
                 <label>
-                  <input type="radio" id="cli_tipo_f" name="cli_tipo" class="flat-red" value="f" checked>
-                  Pessoa Física
+                  <!-- <input type="radio" id="cli_tipo_f" name="cli_tipo" class="minimal" value="f" checked 
+                    onclick="hidePj()"> -->
+                  <button id="btn_pf" type="button" class="btn btn-block btn-default">Pessoa Física</button>
                 </label>
                 <label>
-                  <input type="radio" id="cli_tipo_j" name="cli_tipo" class="flat-red" value="j">
-                  Pessoa Jurídica
+                  <!-- <input type="radio" id="cli_tipo_j" name="cli_tipo" class="minimal" value="j" onclick="hidePf()"> -->
+                  <button id="btn_pj" type="button" class="btn btn-block btn-default">Pessoa Jurídica</button>
                 </label>
 
               </div>
 
-              <!-- nome -->
-              <div class="form-group col-md-4">
-                <label for="cli_nome">Nome</label>
-                <input type="text" class="form-control" id="cli_nome" name="cli_nome" placeholder="Nome">
-              </div>
+              <div id="dados_pf">
+                <!-- nome -->
+                <div class="form-group col-md-4">
+                  <label for="cli_nome">Nome</label>
+                  <input type="text" class="form-control" id="cli_nome" name="cli_nome" placeholder="Nome">
+                </div>
 
-              <!-- cpf -->
-              <div class="form-group col-md-4">
-                <label for="cli_cpf">Cpf</label>
-                <input type="text" class="form-control" id="cli_cpf" name="cli_cpf"
-                  data-inputmask="'mask': ['999.999.999-99', '999.999.999-99']" data-mask placeholder="000.000.000-00">
-              </div>
+                <!-- cpf -->
+                <div class="form-group col-md-4">
+                  <label for="cli_cpf">Cpf</label>
+                  <input type="text" class="form-control" id="cli_cpf" name="cli_cpf"
+                    data-inputmask="'mask': ['999.999.999-99', '999.999.999-99']" data-mask
+                    placeholder="000.000.000-00">
+                </div>
 
-              <!-- data nascimento -->
-              <div class="form-group col-md-4">
-                <label>Nascimento</label>
-                <div class="form-group">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i class="fa fa-calendar"></i>
+                <!-- data nascimento -->
+                <div class="form-group col-md-4">
+                  <label>Nascimento</label>
+                  <div class="form-group">
+                    <div class="input-group date">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      <input type="text" class="form-control pull-right" id="datepicker" name="cli_data_nascimento"
+                        placeholder="00/00/0000">
                     </div>
-                    <input type="text" class="form-control pull-right" id="datepicker" name="cli_data_nascimento"
-                      placeholder="00/00/0000">
                   </div>
                 </div>
+
               </div>
 
-              <!-- razao social -->
-              <div class="form-group col-md-4">
-                <label for="cli_razao_social">Razão Social</label>
-                <input type="text" class="form-control" id="cli_razao_social" name="cli_razao_social"
-                  placeholder="Razão Social">
-              </div>
+              <div id="dados_pj">
+                <!-- razao social -->
+                <div class="form-group col-md-4">
+                  <label for="cli_razao_social">Razão Social</label>
+                  <input type="text" class="form-control" id="cli_razao_social" name="cli_razao_social"
+                    placeholder="Razão Social">
+                </div>
 
-              <!-- cnpj -->
-              <div class="form-group col-md-4">
-                <label for="cli_cnpj">Cnpj</label>
-                <input type="text" class="form-control" id="cli_cnpj" name="cli_cnpj"
-                  data-inputmask="'mask': ['99.999.999/9999-99', '99.999.999/9999-99']" data-mask
-                  placeholder="00.000.000/0000-00">
-              </div>
+                <!-- cnpj -->
+                <div class="form-group col-md-4">
+                  <label for="cli_cnpj">Cnpj</label>
+                  <input type="text" class="form-control" id="cli_cnpj" name="cli_cnpj"
+                    data-inputmask="'mask': ['99.999.999/9999-99', '99.999.999/9999-99']" data-mask
+                    placeholder="00.000.000/0000-00">
+                </div>
 
-              <!-- ie -->
-              <Div class="form-group col-md-4">
-                <label for="cli_ie">Ins. Est.</label>
-                <input type="text" class="form-control" id="cli_ie" name="cli_ie"
-                  data-inputmask="'mask': ['999999999999', '999999999999']" data-mask placeholder="000000000000">
-              </Div>
+                <!-- ie -->
+                <Div class="form-group col-md-4">
+                  <label for="cli_ie">Ins. Est.</label>
+                  <input type="text" class="form-control" id="cli_ie" name="cli_ie"
+                    data-inputmask="'mask': ['999999999999', '999999999999']" data-mask placeholder="000000000000">
+                </Div>
+
+              </div>
 
               <!-- celular -->
               <div class="form-group col-md-6">

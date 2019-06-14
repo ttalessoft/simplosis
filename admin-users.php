@@ -4,7 +4,7 @@ use Hcode\PageAdmin;
 
 use Hcode\Model\User;
 
-// Método que lista todos os usuários em um relatório
+// Método que lista todos os usuários em um array
     $app->get("/admin/users", function(){
     
         User::verifyLogin();
