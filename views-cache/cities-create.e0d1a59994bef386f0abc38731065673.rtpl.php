@@ -23,7 +23,7 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form" action="/admin/cities/create" method="post">
+          <form role="form" action="/admin/cities/create" method="POST">
             <div class="box-body">
               <div class="form-group col-md-8">
                 <label for="name">Nome da cidade</label>
@@ -31,35 +31,13 @@
               </div>
               <div class="form-group col-md-4">
                 <label>Uf</label>
-                <select class="form-control select2" style="width: 100%;">
+                <select class="form-control select2" style="width: 100%;" name="idstate">
                   <option selected="selected">Uf</option>
-                  <option>AC</option>
-                  <option>AL</option>
-                  <option>AM</option>
-                  <option>AP</option>
-                  <option>BA</option>
-                  <option>CE</option>
-                  <option>DF</option>
-                  <option>ES</option>
-                  <option>GO</option>
-                  <option>MA</option>
-                  <option>MG</option>
-                  <option>MS</option>
-                  <option>MT</option>
-                  <option>PA</option>
-                  <option>PB</option>
-                  <option>PE</option>
-                  <option>PI</option>
-                  <option>PR</option>
-                  <option>RJ</option>
-                  <option>RN</option>
-                  <option>RO</option>
-                  <option>RR</option>
-                  <option>RS</option>
-                  <option>SC</option>
-                  <option>SE</option>
-                  <option>SP</option>
-                  <option>TO</option>
+                  <?php $counter1=-1;  if( isset($ufs) && ( is_array($ufs) || $ufs instanceof Traversable ) && sizeof($ufs) ) foreach( $ufs as $key1 => $value1 ){ $counter1++; ?>
+
+                  <option value="<?php echo htmlspecialchars( $value1["idstate"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["state"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                  <?php } ?>
+
                 </select>
               </div>
             </div>

@@ -10,3 +10,9 @@ use Hcode\PageAdmin;
 		$page = new PageAdmin();
 		$page->setTpl("client-create");
 	});
+
+	$app->post("/admin/clients/test", function(){
+		User::verifyLogin();
+		var_dump($_POST);
+		exit;
+	});
