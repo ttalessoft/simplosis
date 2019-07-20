@@ -7,9 +7,9 @@ use Hcode\Model\Uf;
 
 use Hcode\PageAdmin;
 
-$app->get("/admin/test", function(){
+$app->get("/admin/post-cidades", function(){
     
-    $cities = City::listAll();
+    var_dump($cities = City::listAll());
 
 });
 

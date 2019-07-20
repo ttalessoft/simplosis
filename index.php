@@ -22,6 +22,7 @@ require_once("admin-login.php");
 require_once("admin-users.php");
 require_once("admin-products.php");
 require_once("admin-cities.php");
+require_once("admin-cliforgrupo.php");
 
 $app->run();
 

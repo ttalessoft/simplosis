@@ -28,3 +28,9 @@ function getUserName(){
 	return $user->getdesperson();
 
 }
+
+function getUserMail(){
+
+	$user = User::getFromSession();
+	return $user->getdesemail();
+}

@@ -265,7 +265,7 @@ desired effect
                         <img src="/res/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p><?php echo getUserMail(); ?></p>
                         <!-- Status -->
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
@@ -309,8 +309,9 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/admin/clients">Listar</a></li>
-                            <li><a href="/admin/clients/create">Cadastrar</a></li>
+                            <li><a href="/admin/clients">Listar Clientes</a></li>
+                            <li><a href="/admin/clients/create">Cadastrar Cliente</a></li>
+                            <li><a href="/admin/cliforgrupo/listar">Grupo Clientes</a></li>
                         </ul>
                     </li>
                     <li class="treeview">

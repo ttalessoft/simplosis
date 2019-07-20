@@ -8,7 +8,7 @@
     <ol class="breadcrumb">
       <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#">Clientes</a></li>
-      <li class="active"><a href="/admin/clients/create">Cadastrar</a></li>
+      <li class="active"><a href="/admin/cliente/novo">Cadastrar</a></li>
     </ol>
   </section>
 
@@ -23,17 +23,17 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form" action="/admin/clients/test" method="post">
+          <form role="form" action="/admin/cliente/test" method="post">
 
             <!-- Tipo Pessoa -->
             <div class="box-body">
               <div class="form-group col-md-12">
                 <label>
-                  <input type="radio" id="cli_tipo_f" name="cli_tipo" class="" value="f">
+                  <input type="radio" id="cli_tipo_f" name="tipo_pe" class="" value="f">
                   Pessoa física
                 </label>
                 <label>
-                  <input type="radio" id="cli_tipo_j" name="cli_tipo" class="" value="j">
+                  <input type="radio" id="cli_tipo_j" name="tipo_pe" class="" value="j">
                   Pessoa jurídica
                 </label>
 
@@ -138,12 +138,11 @@
                     <label>Grupo</label>
                     <select class="form-control select2" style="width: 100%;">
                       <option selected="selected">Sem grupo</option>
-                      <option>Grupo cliente 1</option>
-                      <option>Grupo cliente 2</option>
-                      <option>Grupo cliente 3</option>
-                      <option>Grupo cliente 4</option>
-                      <option>Grupo cliente 5</option>
-                      <option>Grupo cliente 6</option>
+                      <option></option>
+                      <option></option>
+                      <option></option>
+                      <option></option>
+                      <option></option>
                     </select>
                   </div>
                 </div>
@@ -195,33 +194,9 @@
                     <label>Uf</label>
                     <select class="form-control select2" style="width: 100%;">
                       <option selected="selected">Uf</option>
-                      <option>AC</option>
-                      <option>AL</option>
-                      <option>AM</option>
-                      <option>AP</option>
-                      <option>BA</option>
-                      <option>CE</option>
-                      <option>DF</option>
-                      <option>ES</option>
-                      <option>GO</option>
-                      <option>MA</option>
-                      <option>MG</option>
-                      <option>MS</option>
-                      <option>MT</option>
-                      <option>PA</option>
-                      <option>PB</option>
-                      <option>PE</option>
-                      <option>PI</option>
-                      <option>PR</option>
-                      <option>RJ</option>
-                      <option>RN</option>
-                      <option>RO</option>
-                      <option>RR</option>
-                      <option>RS</option>
-                      <option>SC</option>
-                      <option>SE</option>
-                      <option>SP</option>
-                      <option>TO</option>
+                      <?php $counter1=-1;  if( isset($ufs) && ( is_array($ufs) || $ufs instanceof Traversable ) && sizeof($ufs) ) foreach( $ufs as $key1 => $value1 ){ $counter1++; ?>
+                      <option value="<?php echo htmlspecialchars( $value1["idstate"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["state"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                      <?php } ?>
                     </select>
                   </div>
                 </div>
@@ -241,17 +216,6 @@
                 </div>
 
               </div>
-
-
-
-
-
-
-
-
-
-
-
 
             </div>
 
