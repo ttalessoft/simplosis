@@ -309,8 +309,8 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/admin/clients">Listar Clientes</a></li>
-                            <li><a href="/admin/clients/create">Cadastrar Cliente</a></li>
+                            <li><a href="/admin/clifordados/listar">Listar Clientes</a></li>
+                            <li><a href="/admin/clifordados/novo">Cadastrar Cliente</a></li>
                             <li><a href="/admin/cliforgrupo/listar">Grupo Clientes</a></li>
                         </ul>
                     </li>

@@ -17,12 +17,12 @@ require_once("site-categories.php");
 // requisições do controller do admin
 require_once("admin.php");
 require_once("admin-categories.php");
-require_once("admin-clients.php");
 require_once("admin-login.php");
 require_once("admin-users.php");
 require_once("admin-products.php");
 require_once("admin-cities.php");
 require_once("admin-cliforgrupo.php");
+require_once("admin-clifordados.php");
 
 $app->run();
 

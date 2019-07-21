@@ -34,3 +34,47 @@ function getUserMail(){
 	$user = User::getFromSession();
 	return $user->getdesemail();
 }
+
+function limpaCPF_CNPJ($valor){
+	$valor = trim($valor);
+	$valor = str_replace(".", "", $valor);
+	$valor = str_replace(",", "", $valor);
+	$valor = str_replace("-", "", $valor);
+	$valor = str_replace("/", "", $valor);
+ 	return $valor;
+}
+
+function limpaRG_IE($valor){
+	$valor = trim($valor);
+	$valor = str_replace(".", "", $valor);
+	$valor = str_replace("_", "", $valor);
+	return $valor;
+}
+
+function limpaCEP($valor){
+	$valor = trim($valor);
+	$valor = str_replace(".", "", $valor);
+	$valor = str_replace("-", "", $valor);
+	return $valor;
+}
+
+function converterData($data, $formato){
+	return date($formato, strtotime($data));
+}
+
+function retornoSigla($sigla){
+	switch ($sigla) {
+		case 'f':
+			return 'Física';
+			break;
+		case 'j':
+			return 'Jurídica';
+			break;
+		case 'c':
+			return 'Cliente';
+			break;
+		case 'F':
+			return 'Fornecedor';
+			break;
+	}
+}

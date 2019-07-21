@@ -1,0 +1,83 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Lista de Clientes
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active"><a href="/admin/clifordados/listar">Clientes</a></li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box box-primary">
+
+          <div class="box-header">
+            <a href="/admin/clifordados/novo" class="btn btn-success">Novo</a>
+          </div>
+
+          <div class="box-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th class="text-center">#</th>
+                  <th class="text-center">Tipo?</th>
+                  <th class="text-center">Cliente/Fornecedor?</th>
+                  <th>Nome/Razão Social</th>
+                  <th>CPF/CNPJ</th>
+                  <th>Grupos Cliente</th>
+                  <th>Cidade - Uf</th>
+                  <th class="text-center">Menu</th>
+                </tr>
+              </thead>
+              <tbody>
+                {loop="$clifordados"}
+                <tr>
+                  <td style="text-align: center;">{$value.idclifor}</td>
+                  <td class="text-center">{function="retornoSigla($value.tipo_pe)"}</td>
+                  <td class="text-center">{function="retornoSigla($value.tipo_cf)"}</td>
+                  <td>{$value.nome_rs}</td>
+                  <td>{$value.cpf_cnpj}</td>
+                  <td>{$value.grupo}</td>
+                  <td>{$value.cidade} - {$value.uf}</td>
+                  <td style="text-align: center;">
+                    <a href="/admin/clifordados/editar/{$value.idclifor}" class="btn btn-primary btn-xs"><i
+                        class="fa fa-edit"></i>
+                      Editar</a>
+                    <a href="/admin/clifordados/{$value.idclifor}/excluir"
+                      onclick="return confirm('Deseja realmente excluir este registro?')"
+                      class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                  </td>
+                </tr>
+                {/loop}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th class="text-center">#</th>
+                  <th class="text-center">Tipo?</th>
+                  <th class="text-center">Cliente/Fornecedor?</th>
+                  <th>Nome/Razão Social</th>
+                  <th>CPF/CNPJ</th>
+                  <th>Grupos Cliente</th>
+                  <th>Cidade - Uf</th>
+                  <th class="text-center">Menu</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

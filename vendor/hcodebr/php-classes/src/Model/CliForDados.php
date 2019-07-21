@@ -16,6 +16,18 @@ class CliForDados extends Model{
 
     }
 
+    // Listar dados do form Listar Clientes/Fornecedores
+    public static function listarTodos(){
+        $sql = new Sql();
+        $results = $sql->select("SELECT  a.idclifor, a.tipo_pe, a.tipo_cf, a.nome_rs, a.cpf_cnpj, b.grupo, c.name as cidade, d.state as uf
+                                    FROM tb_clifordados a
+                                        INNER JOIN tb_cliforgrupo b on a.grupo = b.idcliforgru
+                                        INNER JOIN tb_cities c on a.cidade = c.idcity
+                                        INNER JOIN tb_states d on c.idstate = d.idstate
+                                    ORDER BY a.nome_rs ASC;");
+        return $results;
+    }
+
     // Método salvar Clientes/Fornecedores
     public function save(){
 
@@ -50,7 +62,7 @@ class CliForDados extends Model{
 
         $sql = new Sql();
         $results = $sql->select("SELECT * FROM tb_clifordados WHERE idclifor = :idclifor;", [
-            ':idclifor'=>$this->getidclifor()
+            ':idclifor'=>$id
         ]);
         $this->setData($results[0]);
 
