@@ -150,10 +150,7 @@ $app->get("/admin/clifordados/editar/:id", function($id){
 
     $page = new PageAdmin();
     $page->setTpl("clifordados-editar", array(
-        'clifordados'=>$clifordados->getValues(),
-        'cidades'=>$cidades->getValues(),
-        'ufs'=>$ufs->getValues(),
-        'cliforgrupos'=>$cliforgrupos->getValues()
+        'clifordados'=>$clifordados->getValues()
     ));
 });
 

@@ -112,8 +112,8 @@ desired effect
                                             <a href="#">
                                                 <div class="pull-left">
                                                     <!-- User Image -->
-                                                    <img src="/res/admin/dist/img/user2-160x160.jpg" class="img-circle"
-                                                        alt="User Image">
+                                                    <img src="/res/admin/dist/img/ttalessoft@gmail.com.jpg"
+                                                        class="img-circle" alt="User Image">
                                                 </div>
                                                 <!-- Message title and timestamp -->
                                                 <h4>
@@ -201,7 +201,8 @@ desired effect
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="/res/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <img src="/res/admin/dist/img/ttalessoft@gmail.com.jpg" class="user-image"
+                                    alt="User Image">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
 
                                 <span class="hidden-xs"><?php echo getUserName(); ?></span>
@@ -211,7 +212,7 @@ desired effect
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="/res/admin/dist/img/user2-160x160.jpg" class="img-circle"
+                                    <img src="/res/admin/dist/img/ttalessoft@gmail.com.jpg" class="img-circle"
                                         alt="User Image">
 
                                     <p>
@@ -262,7 +263,7 @@ desired effect
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="/res/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="/res/admin/dist/img/ttalessoft@gmail.com.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
                         <p><?php echo getUserMail(); ?></p>
@@ -288,20 +289,7 @@ desired effect
                 <ul class="sidebar-menu">
                     <li class="header">MENU</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-                    <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
 
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-user-secret"></i> <span>Usuários</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="/admin/users">Listar</a></li>
-                            <li><a href="#">...</a></li>
-                        </ul>
-                    </li>
                     <li class="treeview">
                         <a href="#"><i class="fa fa-users"></i> <span>Clientes</span>
                             <span class="pull-right-container">
@@ -309,33 +297,77 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
+                            <li><a href="/admin/clifordados/novo">Novo Cliente</a></li>
                             <li><a href="/admin/clifordados/listar">Listar Clientes</a></li>
-                            <li><a href="/admin/clifordados/novo">Cadastrar Cliente</a></li>
-                            <li><a href="/admin/cliforgrupo/listar">Grupo Clientes</a></li>
+                            <li><a href="/admin/cliforgrupo/listar">Grupos de Clientes</a></li>
                         </ul>
                     </li>
+
                     <li class="treeview">
-                        <a href="#"><i class="fa fa-cubes"></i> <span>Produtos</span>
+                        <a href="#"><i class="fa fa-cube"></i> <span>Produtos</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/admin/products">Listar</a></li>
-                            <li><a href="/admin/products/create">Cadastrar</a></li>
+                            <li><a href="/admin/products/create">Novo Produto</a></li>
+                            <li><a href="/admin/products">Listar Produtos</a></li>
+                            <li><a href="/admin/categories/create">Nova Categoria Prod.</a></li>
+                            <li><a href="/admin/categories">Listar Categorias Prod.</a></li>
                         </ul>
                     </li>
+
                     <li class="treeview">
-                        <a href="#"><i class="fa fa-map-o"></i> <span>Categorias</span>
+                        <a href="#"><i class="fa fa-cubes"></i> <span>Estoque</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/admin/categories">Listar</a></li>
-                            <li><a href="/admin/categories/create">Cadastrar</a></li>
+                            <li><a href="#">Nova</a></li>
+                            <li><a href="#">Listar</a></li>
+                            <li><a href="#">Pesquisar</a></li>
                         </ul>
                     </li>
+
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-money"></i> <span>Vendas</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#">Nova</a></li>
+                            <li><a href="#">Listar</a></li>
+                            <li><a href="#">Pesquisar</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-plus"></i><i class="fa fa-book"></i> <span>Contas Receber</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#">Nova</a></li>
+                            <li><a href="#">Listar</a></li>
+                            <li><a href="#">Pesquisar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-minus"></i><i class="fa fa-book"></i> <span>Contas Pagar</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#">Nova</a></li>
+                            <li><a href="#">Listar</a></li>
+                            <li><a href="#">Pesquisar</a></li>
+                        </ul>
+                    </li>
+
                     <li class="treeview">
                         <a href="#"><i class="fa fa-map-marker"></i> <span>Cidades</span>
                             <span class="pull-right-container">
@@ -345,6 +377,20 @@ desired effect
                         <ul class="treeview-menu">
                             <li><a href="/admin/cities">Listar</a></li>
                             <li><a href="/admin/cities/create">Cadastrar</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <hr class="block_separator">
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-user-secret"></i> <span>Usuários</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/admin/users">Listar</a></li>
+                            <li><a href="#">...</a></li>
                         </ul>
                     </li>
                 </ul>

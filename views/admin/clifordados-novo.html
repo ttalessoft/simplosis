@@ -23,7 +23,7 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form" action="/admin/clifordados/salvar" method="post">
+          <form name="form1" role="form" action="/admin/clifordados/salvar" method="post">
 
             <input type="hidden" id="tipo_cf" name="tipo_cf" value="c">
 
@@ -31,11 +31,11 @@
             <div class="box-body">
               <div class="form-group col-md-12">
                 <label>
-                  <input type="radio" id="cli_tipo_f" name="tipo_pe" class="" value="f">
+                  <input type="radio" id="cli_tipo_f" name="tipo_pe" class="tipo_pe" value="f" required>
                   Pessoa física
                 </label>
                 <label>
-                  <input type="radio" id="cli_tipo_j" name="tipo_pe" class="" value="j">
+                  <input type="radio" id="cli_tipo_j" name="tipo_pe" class="tipo_pe" value="j" required>
                   Pessoa jurídica
                 </label>
               </div>
@@ -52,7 +52,7 @@
                   <!-- apelido -->
                   <div class="form-group col-md-4">
                     <label for="cli_nome">Apelido</label>
-                    <input type="text" class="form-control" id="cli_nome" name="apelido" placeholder="Nome">
+                    <input type="text" class="form-control" id="cli_apelido" name="apelido" placeholder="Nome">
                   </div>
 
                   <!-- cpf -->
@@ -78,7 +78,7 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" class="form-control pull-right" id="datepicker" name="nascimento"
+                        <input type="text" class="form-control pull-right" id="datepicker2" name="nascimento"
                           placeholder="00/00/0000">
                       </div>
                     </div>
@@ -124,7 +124,7 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" class="form-control pull-right" id="datepicker" name="dt_abertura"
+                        <input type="text" class="form-control pull-right" id="datepicker1" name="dt_abertura"
                           placeholder="00/00/0000">
                       </div>
                     </div>
@@ -133,7 +133,7 @@
                   <!-- responsável -->
                   <div class="form-group col-md-4">
                     <label for="cli_razao_social">Responsável</label>
-                    <input type="text" class="form-control" id="cli_razao_social" name="responsavel"
+                    <input type="text" class="form-control" id="cli_responsavl" name="responsavel"
                       placeholder="Responsavel pela empresa" value="null">
                   </div>
 
@@ -148,7 +148,7 @@
                     </div>
                     <input type="text" class="form-control"
                       data-inputmask="'mask': ['(99) 99999-9999', '+055 (99) 99999-9999']" data-mask name="celular"
-                      placeholder="(00) 00000-0000">
+                      placeholder="(00) 00000-0000" required>
                   </div>
                 </div>
 
@@ -170,7 +170,7 @@
                   <label for="cli_email">E-Mail</label>
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                    <input type="email" class="form-control" placeholder="Email" name="email">
+                    <input type="email" class="form-control" placeholder="Email" name="email" required>
                   </div>
                 </div>
 
@@ -178,8 +178,8 @@
                 <div class="form-group col-md-6">
                   <div class="form-group">
                     <label>Grupo</label>
-                    <select class="form-control select2" style="width: 100%;" name="grupo">
-                      <option value="null" selected="selected">Selecione...</option>
+                    <select id="cli_grupo" class="form-control select2" style="width: 100%;" name="grupo" required>
+                      <option value="">Selecione...</option>
                       {loop="$cliforgrupos"}
                       <option value="{$value.idcliforgru}">{$value.grupo}</option>
                       {/loop}
@@ -196,7 +196,7 @@
                   <label>Cep</label>
                   <div class="input-group">
                     <input type="text" class="form-control" data-inputmask="'mask': ['99.999-999', '99.999-999']"
-                      data-mask name="cep" placeholder="00.000-000">
+                      data-mask name="cep" placeholder="00.000-000" required>
                     <div class="input-group-addon">
                       <a class="btn-sm" href="#">
                         <i class="fa fa-map-signs"> Buscar</i>
@@ -233,7 +233,7 @@
                   <div class="form-group">
                     <label>Uf</label>
                     <select class="form-control select2" style="width: 100%;" name="uf">
-                      <option value="null" selected="selected">Uf</option>
+                      <option value="" selected="selected">Uf</option>
                       {loop="$ufs"}
                       <option value="{$value.idstate}">{$value.state}</option>
                       {/loop}
@@ -241,12 +241,13 @@
                   </div>
                 </div>
 
+
                 <!-- cidade -->
                 <div class="form-group col-md-4">
                   <div class="form-group">
                     <label>Cidade</label>
-                    <select class="form-control select2" style="width: 100%;" name="cidade">
-                      <option value="null" selected="selected">Selecione..</option>
+                    <select id="cli_cidade" class="form-control select2" style="width: 100%;" name="cidade" required>
+                      <option value="">Selecione..</option>
                       {loop="$cidades"}
                       <option value="{$value.idcity}">{function="tirarAcentos(utf8_encode($value.city))"} -
                         {$value.state}</option>
@@ -283,3 +284,26 @@
 <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+<script>
+
+  function validarForm() {
+
+    let d = new Date();
+    console.log('clicou: ' + d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds() + ' ' + d.getMilliseconds());
+    var tipoPessoa;
+    var elementos = document.getElementsByName('tipo_pe');
+    for (var i = 0; i < elementos.length; i++) {
+      if (elementos[i].checked) {
+        tipoPessoa = elementos[i].value;
+      }
+    }
+
+    if (tipoPessoa === 'f') {
+
+    } else if (tipoPessoa === 'j') {
+
+    }
+
+  }
+</script>

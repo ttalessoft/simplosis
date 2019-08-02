@@ -165,11 +165,10 @@
         );
 
         //Date picker
-        $('#datepicker').datepicker({
+        $('#datepicker1, #datepicker2').datepicker({
             autoclose: true,
             format: 'dd/mm/yyyy',
             language: 'pt-BR'
-
         });
 
         //iCheck for checkbox and radio inputs

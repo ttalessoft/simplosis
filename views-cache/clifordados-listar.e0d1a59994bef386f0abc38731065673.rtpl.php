@@ -47,7 +47,7 @@
                   <td><?php echo htmlspecialchars( $value1["nome_rs"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                   <td><?php echo htmlspecialchars( $value1["cpf_cnpj"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                   <td><?php echo htmlspecialchars( $value1["grupo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                  <td><?php echo htmlspecialchars( $value1["cidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?> - <?php echo htmlspecialchars( $value1["uf"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                  <td><?php echo tirarAcentos(utf8_encode($value1["cidade"])); ?> - <?php echo htmlspecialchars( $value1["uf"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                   <td style="text-align: center;">
                     <a href="/admin/clifordados/editar/<?php echo htmlspecialchars( $value1["idclifor"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i
                         class="fa fa-edit"></i>

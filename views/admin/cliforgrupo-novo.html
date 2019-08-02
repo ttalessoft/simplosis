@@ -27,7 +27,8 @@
             <div class="box-body">
               <div class="form-group col-md-8">
                 <label for="name">Nome do Grupo</label>
-                <input type="text" class="form-control" id="name" name="grupo" placeholder="Digite o nome do Grupo">
+                <input type="text" class="form-control" id="name" name="grupo" placeholder="Digite o nome do Grupo"
+                  required>
               </div>
             </div>
             <!-- /.box-body -->

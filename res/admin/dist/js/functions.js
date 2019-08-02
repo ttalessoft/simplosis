@@ -11,6 +11,9 @@ $(document).ready(function () {
             console.log('Pessoa jurídica')
         }
     });
+
+    document.getElementById('cli_cidade').required = true;
+    document.getElementById('cli_grupo').required = true;
 });
 
 function definePessoaFisica() {
@@ -20,6 +23,9 @@ function definePessoaFisica() {
     $('#btn_pf').addClass('btn btn-block btn-success');
     $('#btn_pj').removeClass();
     $('#btn_pj').addClass('btn btn-block btn-default');
+    document.getElementById('cli_nome').required = true;
+    document.getElementById('cli_cpf').required = true;
+    document.getElementById('datepicker').required = true;
 }
 
 function definePessoaJuridica() {
@@ -29,7 +35,11 @@ function definePessoaJuridica() {
     $('#btn_pj').addClass('btn btn-block btn-success');
     $('#btn_pf').removeClass();
     $('#btn_pf').addClass('btn btn-block btn-default');
+    document.getElementById('cli_razao_social').required = true;
+    document.getElementById('cli_cnpj').required = true;
+    document.getElementById('cli_responsavel').required = true;
 }
+
 // $(function () {
 //     $('#btn_pf').bind('click', function (e) {
 //         $('#dados_pf').fadeIn(100);

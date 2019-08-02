@@ -17,7 +17,7 @@ class Category extends Model{
     // Método salvar
     public function save(){ 
         $sql = new Sql();
-        $results = $sql->select("CALL sp_categories_save(:idcategory, :descategory);", array(
+            $results = $sql->select("CALL sp_categories_save(:idcategory, :descategory);", array(
             ":idcategory"=>$this->getidcategory(),
             ":descategory"=>$this->getdescategory()
         ));

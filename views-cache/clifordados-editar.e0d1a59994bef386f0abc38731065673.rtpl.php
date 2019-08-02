@@ -8,7 +8,7 @@
     <ol class="breadcrumb">
       <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#">Clientes</a></li>
-      <li class="active"><a href="/admin/cliente/novo">Cadastrar</a></li>
+      <li class="active"><a href="/admin/clifordados/novo">Cadastrar</a></li>
     </ol>
   </section>
 
@@ -19,11 +19,11 @@
       <div class="col-md-12">
         <div class="box box-success">
           <div class="box-header with-border">
-            <h3 class="box-title">Novo Cliente</h3>
+            <h3 class="box-title">Editar Cliente</h3>
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form" action="/admin/cliente/test" method="post">
+          <form role="form" action="/admin/clifordados/editar" method="post" enctype="multipart/form-data">
 
             <!-- Tipo Pessoa -->
             <div class="box-body">

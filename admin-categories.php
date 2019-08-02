@@ -35,10 +35,11 @@ use Hcode\PageAdmin;
 
 		$category = new Category();
 		$category->setData($_POST);
+		
 		$category->save();
-
 		header("Location: /admin/categories");
-		exit;
+		exit;	
+		
 	 });
 
 	 // Deleta uma categoria no banco

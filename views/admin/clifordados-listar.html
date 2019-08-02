@@ -46,7 +46,7 @@
                   <td>{$value.nome_rs}</td>
                   <td>{$value.cpf_cnpj}</td>
                   <td>{$value.grupo}</td>
-                  <td>{$value.cidade} - {$value.uf}</td>
+                  <td>{function="tirarAcentos(utf8_encode($value.cidade))"} - {$value.uf}</td>
                   <td style="text-align: center;">
                     <a href="/admin/clifordados/editar/{$value.idclifor}" class="btn btn-primary btn-xs"><i
                         class="fa fa-edit"></i>
